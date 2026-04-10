@@ -1,0 +1,392 @@
+{
+  "model": "gpt-4o-mini",
+  "runs_per_variant": 3,
+  "test_cases_file": "test_cases.json",
+  "results": [
+    {
+      "id": "syn-inv-paraphrase-01",
+      "type": "invariance",
+      "category": "paraphrase",
+      "consistency": 0.6666666666666666,
+      "flip_rate": 0.5,
+      "variant_responses": {
+        "base": [
+          "The capital of France is Paris.",
+          "The capital of France is Paris.",
+          "The capital of France is Paris."
+        ],
+        "paraphrase-1": [
+          "The capital city of France is Paris.",
+          "The capital city of France is Paris.",
+          "The capital city of France is Paris."
+        ],
+        "paraphrase-2": [
+          "The capital of France is Paris.",
+          "The capital of France is Paris.",
+          "The capital of France is Paris."
+        ]
+      },
+      "variant_scores": {
+        "base": {
+          "exact": 0.0,
+          "regex": 1.0
+        },
+        "paraphrase-1": {
+          "exact": 0.0,
+          "regex": 1.0
+        },
+        "paraphrase-2": {
+          "exact": 0.0,
+          "regex": 1.0
+        }
+      },
+      "flip_rates": {
+        "paraphrase-1": 1.0,
+        "paraphrase-2": 0.0
+      }
+    },
+    {
+      "id": "syn-inv-typo-01",
+      "type": "invariance",
+      "category": "typo",
+      "consistency": 1.0,
+      "flip_rate": 0.0,
+      "variant_responses": {
+        "base": [
+          "The largest planet in our solar system is Jupiter. It is a gas giant with a diameter of about 86,881 miles (139,822 kilometers) and is known for its prominent bands of clouds, Great Red Spot, and numerous moons.",
+          "The largest planet in our solar system is Jupiter. It is a gas giant with a diameter of about 86,881 miles (139,822 kilometers) and is known for its prominent bands of clouds, Great Red Spot, and numerous moons.",
+          "The largest planet in our solar system is Jupiter. It is a gas giant with a diameter of about 86,881 miles (139,822 kilometers) and is known for its prominent bands of clouds, Great Red Spot, and numerous moons."
+        ],
+        "typo-1": [
+          "The largest planet in our solar system is Jupiter. It is a gas giant with a diameter of about 86,881 miles (139,822 kilometers) and is known for its prominent bands of clouds, Great Red Spot, and numerous moons.",
+          "The largest planet in our solar system is Jupiter. It is a gas giant with a diameter of about 86,881 miles (139,822 kilometers) and is known for its prominent bands of clouds, Great Red Spot, and numerous moons.",
+          "The largest planet in our solar system is Jupiter. It is a gas giant with a diameter of about 86,881 miles (139,822 kilometers) and is known for its prominent bands of clouds, Great Red Spot, and numerous moons."
+        ],
+        "typo-2": [
+          "The largest planet in our solar system is Jupiter. It is a gas giant with a diameter of about 86,881 miles (139,822 kilometers) and is known for its prominent bands of clouds, Great Red Spot, and numerous moons.",
+          "The largest planet in our solar system is Jupiter. It is a gas giant with a diameter of about 86,881 miles (139,822 kilometers) and is known for its prominent bands of clouds, Great Red Spot, and numerous moons.",
+          "The largest planet in our solar system is Jupiter. It is a gas giant with a diameter of about 86,881 miles (139,822 kilometers) and is known for its prominent bands of clouds, Great Red Spot, and numerous moons."
+        ]
+      },
+      "variant_scores": {
+        "base": {
+          "exact": 0.0,
+          "regex": 1.0
+        },
+        "typo-1": {
+          "exact": 0.0,
+          "regex": 1.0
+        },
+        "typo-2": {
+          "exact": 0.0,
+          "regex": 1.0
+        }
+      },
+      "flip_rates": {
+        "typo-1": 0.0,
+        "typo-2": 0.0
+      }
+    },
+    {
+      "id": "syn-inv-noise-01",
+      "type": "invariance",
+      "category": "noise",
+      "consistency": 0.4444444444444444,
+      "flip_rate": 1.0,
+      "variant_responses": {
+        "base": [
+          "To convert degrees Celsius to degrees Fahrenheit, you can use the formula:\n\n\\[ F = \\frac{9}{5}C + 32 \\]\n\nWhere \\( C \\) is the temperature in Celsius and \\( F \\) is the temperature in Fahrenheit.\n\nFor 100 degrees Celsius:\n\n\\[ F = \\frac{9}{5} \\times 100 + 32 \\]\n\\[ F = 180 + 32 \\]\n\\[ F = 212 \\]\n\nSo, 100 degrees Celsius is equal to 212 degrees Fahrenheit.",
+          "To convert degrees Celsius to degrees Fahrenheit, you can use the formula:\n\n\\[ F = \\frac{9}{5}C + 32 \\]\n\nWhere \\( F \\) is the temperature in Fahrenheit and \\( C \\) is the temperature in Celsius.\n\nFor 100 degrees Celsius:\n\n\\[ F = \\frac{9}{5} \\times 100 + 32 \\]\n\\[ F = 180 + 32 \\]\n\\[ F = 212 \\]\n\nSo, 100 degrees Celsius is equal to 212 degrees Fahrenheit.",
+          "To convert degrees Celsius to degrees Fahrenheit, you can use the formula:\n\n\\[ F = \\frac{9}{5}C + 32 \\]\n\nWhere \\( C \\) is the temperature in Celsius and \\( F \\) is the temperature in Fahrenheit.\n\nFor 100 degrees Celsius:\n\n\\[ F = \\frac{9}{5} \\times 100 + 32 \\]\n\\[ F = 180 + 32 \\]\n\\[ F = 212 \\]\n\nSo, 100 degrees Celsius is equal to 212 degrees Fahrenheit."
+        ],
+        "noise-1": [
+          "To convert degrees Celsius to degrees Fahrenheit, you can use the formula:\n\n\\[ F = \\frac{9}{5}C + 32 \\]\n\nWhere \\( F \\) is the temperature in Fahrenheit and \\( C \\) is the temperature in Celsius.\n\nFor 100 degrees Celsius:\n\n\\[ F = \\frac{9}{5} \\times 100 + 32 \\]\n\\[ F = 180 + 32 \\]\n\\[ F = 212 \\]\n\nSo, 100 degrees Celsius is equal to 212 degrees Fahrenheit.",
+          "To convert degrees Celsius to degrees Fahrenheit, you can use the formula:\n\n\\[ F = \\frac{9}{5}C + 32 \\]\n\nWhere \\( F \\) is the temperature in Fahrenheit and \\( C \\) is the temperature in Celsius.\n\nFor 100 degrees Celsius:\n\n\\[ F = \\frac{9}{5} \\times 100 + 32 \\]\n\\[ F = 180 + 32 \\]\n\\[ F = 212 \\]\n\nSo, 100 degrees Celsius is equal to 212 degrees Fahrenheit.",
+          "To convert degrees Celsius to degrees Fahrenheit, you can use the formula:\n\n\\[ F = \\frac{9}{5}C + 32 \\]\n\nWhere \\( F \\) is the temperature in Fahrenheit and \\( C \\) is the temperature in Celsius.\n\nFor 100 degrees Celsius:\n\n\\[ F = \\frac{9}{5} \\times 100 + 32 \\]\n\\[ F = 180 + 32 \\]\n\\[ F = 212 \\]\n\nSo, 100 degrees Celsius is equal to 212 degrees Fahrenheit."
+        ],
+        "noise-2": [
+          "To convert degrees Celsius to degrees Fahrenheit, you can use the formula:\n\n\\[ F = \\frac{9}{5}C + 32 \\]\n\nFor 100 degrees Celsius:\n\n\\[ F = \\frac{9}{5} \\times 100 + 32 \\]\n\\[ F = 180 + 32 \\]\n\\[ F = 212 \\]\n\nSo, 100 degrees Celsius is equal to 212 degrees Fahrenheit.",
+          "To convert degrees Celsius to degrees Fahrenheit, you can use the formula:\n\n\\[ F = \\frac{9}{5}C + 32 \\]\n\nFor 100 degrees Celsius:\n\n\\[ F = \\frac{9}{5} \\times 100 + 32 \\]\n\\[ F = 180 + 32 \\]\n\\[ F = 212 \\]\n\nSo, 100 degrees Celsius is equal to 212 degrees Fahrenheit.",
+          "To convert degrees Celsius to degrees Fahrenheit, you can use the formula:\n\n\\[ F = \\frac{9}{5}C + 32 \\]\n\nFor 100 degrees Celsius:\n\n\\[ F = \\frac{9}{5} \\times 100 + 32 \\]\n\\[ F = 180 + 32 \\]\n\\[ F = 212 \\]\n\nSo, 100 degrees Celsius is equal to 212 degrees Fahrenheit."
+        ]
+      },
+      "variant_scores": {
+        "base": {
+          "regex": 1.0
+        },
+        "noise-1": {
+          "regex": 1.0
+        },
+        "noise-2": {
+          "regex": 1.0
+        }
+      },
+      "flip_rates": {
+        "noise-1": 1.0,
+        "noise-2": 1.0
+      }
+    },
+    {
+      "id": "syn-pert-reorder-01",
+      "type": "perturbation",
+      "category": "reorder",
+      "consistency": 0.3333333333333333,
+      "flip_rate": 1.0,
+      "variant_responses": {
+        "base": [
+          "C",
+          "C",
+          "C"
+        ],
+        "reorder-1": [
+          "A",
+          "A",
+          "A"
+        ],
+        "reorder-2": [
+          "D",
+          "D",
+          "D"
+        ]
+      },
+      "variant_scores": {
+        "base": {
+          "regex": 1.0
+        },
+        "reorder-1": {
+          "regex": 1.0
+        },
+        "reorder-2": {
+          "regex": 1.0
+        }
+      },
+      "flip_rates": {
+        "reorder-1": 1.0,
+        "reorder-2": 1.0
+      }
+    },
+    {
+      "id": "syn-pert-distractor-01",
+      "type": "perturbation",
+      "category": "distractor",
+      "consistency": 0.6666666666666666,
+      "flip_rate": 1.0,
+      "variant_responses": {
+        "base": [
+          "World War II ended in 1945. In Europe, it concluded with the unconditional surrender of Germany on May 7, 1945, which was officially celebrated on May 8, known as Victory in Europe (VE) Day. In the Pacific, the war ended with Japan's surrender on September 2, 1945, following the dropping of atomic bombs on Hiroshima and Nagasaki in August.",
+          "World War II ended in 1945. In Europe, it concluded with the unconditional surrender of Germany on May 7, 1945, which was officially celebrated on May 8, known as Victory in Europe (VE) Day. In the Pacific, the war ended with Japan's surrender on September 2, 1945, following the atomic bombings of Hiroshima and Nagasaki in August.",
+          "World War II ended in 1945. In Europe, it concluded with the unconditional surrender of Germany on May 7, 1945, which was officially celebrated on May 8, known as Victory in Europe (VE) Day. In the Pacific, the war ended with Japan's surrender on September 2, 1945, following the atomic bombings of Hiroshima and Nagasaki in August."
+        ],
+        "distractor-1": [
+          "World War II ended in 1945.",
+          "World War II ended in 1945.",
+          "World War II ended in 1945."
+        ],
+        "distractor-2": [
+          "World War II ended in 1945.",
+          "World War II ended in 1945.",
+          "World War II ended in 1945."
+        ]
+      },
+      "variant_scores": {
+        "base": {
+          "regex": 1.0
+        },
+        "distractor-1": {
+          "regex": 1.0
+        },
+        "distractor-2": {
+          "regex": 1.0
+        }
+      },
+      "flip_rates": {
+        "distractor-1": 1.0,
+        "distractor-2": 1.0
+      }
+    },
+    {
+      "id": "real-inv-codeswitch-01",
+      "type": "invariance",
+      "category": "paraphrase",
+      "consistency": 0.1111111111111111,
+      "flip_rate": 1.0,
+      "variant_responses": {
+        "formal": [
+          "The three-way handshake is a fundamental process used in TCP/IP networking to establish a reliable connection between a client and a server. This process ensures that both parties are ready to communicate and that they can synchronize their sequence numbers for data transmission. Here\u2019s how the three-way handshake works:\n\n### Step 1: SYN (Synchronize)\n- **Initiation**: The client initiates the connection by sending a TCP segment with the SYN (synchronize) flag set to the server. This segment includes an initial sequence number (let's call it `x`).\n- **Purpose**: This step indicates that the client wants to establish a connection and is ready to synchronize sequence numbers.\n\n### Step 2: SYN-ACK (Synchronize-Acknowledge)\n- **Response**: Upon receiving the SYN segment, the server acknowledges the request by sending back a segment with both the SYN and ACK (acknowledge) flags set. The acknowledgment number is set to `x + 1`, indicating that it has received the client's SYN request. The server also includes its own initial sequence number (let's call it `y`).\n- **Purpose**: This step confirms the receipt of the client's SYN and indicates that the server is also ready to establish a connection.\n\n### Step 3: ACK (Acknowledge)\n- **Final Acknowledgment**: The client receives the SYN-ACK segment from the server and sends back a final segment with the ACK flag set. The acknowledgment number is set to `y + 1`, indicating that it has received the server's SYN-ACK. \n- **Purpose**: This step completes the handshake process, confirming that both parties are synchronized and ready to start data transmission.\n\n### Summary\nAfter these three steps, a TCP connection is established, and both the client and server can begin to exchange data. The three-way handshake ensures that both sides are aware of each other's initial sequence numbers and are prepared for reliable communication. This process is crucial for maintaining the integrity and reliability of data transmission in TCP/IP networking.",
+          "The three-way handshake is a fundamental process used in TCP/IP networking to establish a reliable connection between a client and a server. This process ensures that both parties are ready to communicate and agree on initial sequence numbers for data transmission. Here\u2019s how it works step-by-step:\n\n### Step 1: SYN (Synchronize)\n- **Initiation**: The client wants to establish a connection with the server. It sends a TCP segment with the SYN (synchronize) flag set to the server. This segment includes an initial sequence number (let's call it `x`).\n- **Purpose**: This step indicates that the client wants to initiate a connection and provides the server with the client's initial sequence number.\n\n### Step 2: SYN-ACK (Synchronize-Acknowledge)\n- **Response**: Upon receiving the SYN segment, the server acknowledges the request by sending back a segment with both the SYN and ACK (acknowledge) flags set. This segment includes the server's own initial sequence number (let's call it `y`) and acknowledges the client's sequence number by setting the acknowledgment number to `x + 1`.\n- **Purpose**: This step confirms that the server has received the client's SYN request and is also ready to establish a connection. The server's response includes its own sequence number for the upcoming communication.\n\n### Step 3: ACK (Acknowledge)\n- **Final Acknowledgment**: The client receives the SYN-ACK segment from the server and sends back a final segment with the ACK flag set. This segment acknowledges the server's SYN by setting the acknowledgment number to `y + 1`.\n- **Purpose**: This step completes the handshake process, confirming that the client has received the server's SYN-ACK and is ready to start data transmission.\n\n### Summary\nAt the end of the three-way handshake:\n- The client and server have established a connection.\n- Both parties have agreed on initial sequence numbers for the data they will send.\n- The connection is now ready for data transfer.\n\nThis process is crucial for ensuring reliable communication in TCP, as it helps to synchronize the sequence numbers and confirm that both sides are prepared to send and receive data.",
+          "The three-way handshake is a fundamental process used in TCP/IP networking to establish a reliable connection between a client and a server. This process ensures that both parties are ready to communicate and that they can synchronize their sequence numbers for data transmission. Here\u2019s a step-by-step explanation of the three-way handshake:\n\n### Step 1: SYN (Synchronize)\n- **Initiation**: The client wants to establish a connection with the server. It sends a TCP segment with the SYN (synchronize) flag set to the server. This segment includes an initial sequence number (let's call it `x`).\n- **Purpose**: This step indicates that the client wants to initiate a connection and provides the server with the client's initial sequence number.\n\n### Step 2: SYN-ACK (Synchronize-Acknowledge)\n- **Response**: Upon receiving the SYN segment, the server acknowledges the request by sending back a segment with both the SYN and ACK (acknowledge) flags set. This segment includes the server's own initial sequence number (let's call it `y`) and acknowledges the client's sequence number by setting the acknowledgment number to `x + 1`.\n- **Purpose**: This step confirms that the server has received the client's SYN request and is also ready to establish a connection. The server's response includes its own sequence number for the upcoming communication.\n\n### Step 3: ACK (Acknowledge)\n- **Final Acknowledgment**: The client receives the SYN-ACK segment from the server and sends back a final segment with the ACK flag set. This segment acknowledges the server's SYN by setting the acknowledgment number to `y + 1`.\n- **Purpose**: This step completes the handshake process, confirming that the client has received the server's SYN-ACK and is ready to start data transmission.\n\n### Summary\nAt the end of the three-way handshake:\n- The client and server have established a connection.\n- Both parties have synchronized their sequence numbers, allowing for reliable data transmission.\n- The connection is now in the established state, and data can be sent in both directions.\n\nThis process is crucial for ensuring that both the client and server are prepared for communication and helps to prevent issues such as lost packets or out-of-order delivery."
+        ],
+        "casual": [
+          "The TCP (Transmission Control Protocol) handshake is a process used to establish a reliable connection between a client and a server before they start communicating. This process is often referred to as the \"three-way handshake.\" Here\u2019s how it works:\n\n1. **SYN (Synchronize)**: The client wants to establish a connection with the server, so it sends a TCP segment with the SYN flag set. This segment includes an initial sequence number (let's call it `x`). The client is essentially saying, \"I want to start a connection, and my initial sequence number is `x`.\"\n\n2. **SYN-ACK (Synchronize-Acknowledge)**: The server receives the SYN segment and responds with its own segment that has both the SYN and ACK flags set. This segment acknowledges the client's request by including an acknowledgment number (`x + 1`), indicating that it received the client's initial sequence number. The server also includes its own initial sequence number (let's call it `y`), saying, \"I acknowledge your request, and my initial sequence number is `y`.\"\n\n3. **ACK (Acknowledge)**: Finally, the client receives the SYN-ACK segment from the server and sends back a segment with the ACK flag set. This segment acknowledges the server's initial sequence number by including an acknowledgment number (`y + 1`). At this point, the connection is established, and both the client and server can start sending data.\n\nIn summary, the three steps of the TCP handshake are:\n1. Client sends SYN.\n2. Server responds with SYN-ACK.\n3. Client sends ACK.\n\nOnce this handshake is complete, a reliable connection is established, and data can be transmitted between the client and server. This process ensures that both parties are ready for communication and helps synchronize their sequence numbers for data integrity.",
+          "The TCP (Transmission Control Protocol) handshake is a process used to establish a reliable connection between a client and a server before they start communicating. This process is often referred to as the \"three-way handshake.\" Here\u2019s how it works:\n\n1. **SYN (Synchronize)**: The client wants to establish a connection with the server, so it sends a SYN packet to the server. This packet includes an initial sequence number, which is used to keep track of the data being sent.\n\n2. **SYN-ACK (Synchronize-Acknowledge)**: The server receives the SYN packet and responds with a SYN-ACK packet. This packet acknowledges the receipt of the client's SYN packet by including an acknowledgment number (which is the client's initial sequence number plus one) and also includes its own initial sequence number.\n\n3. **ACK (Acknowledge)**: Finally, the client receives the SYN-ACK packet from the server and sends back an ACK packet to the server. This packet acknowledges the server's SYN-ACK by including the server's initial sequence number plus one.\n\nOnce this three-way handshake is complete, a reliable connection is established, and the client and server can start exchanging data.\n\n### Summary of the Steps:\n- **Client \u2192 Server**: SYN (with client\u2019s sequence number)\n- **Server \u2192 Client**: SYN-ACK (with server\u2019s sequence number and acknowledgment of client\u2019s sequence number)\n- **Client \u2192 Server**: ACK (acknowledging server\u2019s sequence number)\n\nThis process ensures that both parties are ready to communicate and that they can keep track of the data being sent, which is crucial for maintaining the integrity of the connection.",
+          "The TCP (Transmission Control Protocol) handshake is a process used to establish a reliable connection between a client and a server before they start exchanging data. This process is often referred to as the \"three-way handshake.\" Here\u2019s how it works:\n\n1. **SYN (Synchronize)**: The client wants to establish a connection with the server, so it sends a TCP segment with the SYN flag set. This segment includes an initial sequence number (let's call it `x`), which is used to keep track of the data being sent.\n\n2. **SYN-ACK (Synchronize-Acknowledge)**: The server receives the SYN segment and responds with its own segment that has both the SYN and ACK flags set. This segment acknowledges the client's SYN by including an acknowledgment number (`x + 1`), indicating that it has received the client's initial sequence number. The server also includes its own initial sequence number (let's call it `y`).\n\n3. **ACK (Acknowledge)**: Finally, the client receives the SYN-ACK from the server and sends back a segment with the ACK flag set. This segment acknowledges the server's SYN by including an acknowledgment number (`y + 1`).\n\nAt this point, the connection is established, and both the client and server can start sending data to each other. The sequence numbers help ensure that data is delivered in the correct order and that any lost packets can be retransmitted.\n\nIn summary, the three steps of the TCP handshake are:\n1. Client sends SYN.\n2. Server responds with SYN-ACK.\n3. Client sends ACK.\n\nThis process ensures that both parties are ready for communication and helps establish a reliable connection."
+        ],
+        "terse": [
+          "The TCP (Transmission Control Protocol) 3-way handshake is a process used to establish a reliable connection between a client and a server. It involves three steps:\n\n1. **SYN (Synchronize)**: \n   - The client sends a SYN packet to the server to initiate a connection. This packet includes a randomly generated initial sequence number (ISN) that the client will use for the session.\n\n2. **SYN-ACK (Synchronize-Acknowledge)**: \n   - The server responds to the client's SYN packet with a SYN-ACK packet. This packet acknowledges the receipt of the client's SYN (by including the client's ISN + 1) and also includes the server's own ISN.\n\n3. **ACK (Acknowledge)**: \n   - The client sends an ACK packet back to the server, acknowledging the receipt of the server's SYN-ACK (by including the server's ISN + 1). \n\nAfter these three steps, the connection is established, and data can be transmitted between the client and server.\n\n### Summary of the Steps:\n1. **Client \u2192 Server**: SYN (Client's ISN)\n2. **Server \u2192 Client**: SYN-ACK (Server's ISN, Client's ISN + 1)\n3. **Client \u2192 Server**: ACK (Server's ISN + 1)\n\nThis process ensures that both the client and server are synchronized and ready to communicate reliably.",
+          "The TCP (Transmission Control Protocol) 3-way handshake is a process used to establish a reliable connection between a client and a server. It involves three steps:\n\n1. **SYN (Synchronize)**: \n   - The client sends a TCP segment with the SYN flag set to the server. This segment includes an initial sequence number (ISN) that the client will use for the session. The purpose of this step is to initiate a connection and inform the server that the client wants to establish a connection.\n\n2. **SYN-ACK (Synchronize-Acknowledge)**: \n   - The server responds to the client's SYN segment by sending back a segment with both the SYN and ACK (Acknowledge) flags set. This segment acknowledges the receipt of the client's SYN by including an acknowledgment number (which is the client's ISN + 1) and also includes its own ISN for the session.\n\n3. **ACK (Acknowledge)**: \n   - Finally, the client sends an ACK segment back to the server. This segment acknowledges the server's SYN-ACK by including the server's ISN + 1 in the acknowledgment number. At this point, the connection is established, and data can be transmitted between the client and server.\n\nIn summary, the steps of the TCP 3-way handshake are:\n1. Client \u2192 Server: SYN\n2. Server \u2192 Client: SYN-ACK\n3. Client \u2192 Server: ACK\n\nOnce this handshake is complete, a reliable connection is established, and data transfer can begin.",
+          "The TCP (Transmission Control Protocol) 3-way handshake is a process used to establish a reliable connection between a client and a server. It involves three steps:\n\n1. **SYN (Synchronize)**: \n   - The client sends a TCP segment with the SYN flag set to the server. This segment includes an initial sequence number (ISN) that the client will use for the connection. This step indicates that the client wants to establish a connection.\n\n2. **SYN-ACK (Synchronize-Acknowledge)**: \n   - The server responds to the client's SYN segment with a segment of its own that has both the SYN and ACK flags set. This segment acknowledges the receipt of the client's SYN by including an acknowledgment number (which is the client's ISN + 1) and also includes its own ISN for the connection.\n\n3. **ACK (Acknowledge)**: \n   - Finally, the client sends an ACK segment back to the server. This segment acknowledges the server's SYN-ACK by including the server's ISN + 1 in the acknowledgment number. At this point, the connection is established, and data can be transmitted between the client and server.\n\nIn summary, the steps of the TCP 3-way handshake are:\n1. Client \u2192 Server: SYN\n2. Server \u2192 Client: SYN-ACK\n3. Client \u2192 Server: ACK\n\nAfter these three steps, a reliable connection is established, and data transfer can begin."
+        ]
+      },
+      "variant_scores": {
+        "formal": {
+          "regex": 1.0,
+          "semantic": 0.6846257138702162
+        },
+        "casual": {
+          "regex": 1.0,
+          "semantic": 0.7185525386349848
+        },
+        "terse": {
+          "regex": 1.0,
+          "semantic": 0.7323927446896423
+        }
+      },
+      "flip_rates": {
+        "casual": 1.0,
+        "terse": 1.0
+      }
+    },
+    {
+      "id": "real-pert-framing-01",
+      "type": "perturbation",
+      "category": "framing",
+      "consistency": 0.16666666666666666,
+      "flip_rate": 1.0,
+      "variant_responses": {
+        "positive": [
+          "Python's type hints, introduced in PEP 484, provide a way to indicate the expected data types of variables, function parameters, and return values. Here are several benefits of using type hints in Python:\n\n1. **Improved Readability**: Type hints make the code more understandable by providing explicit information about what types of values are expected. This can help other developers (or your future self) quickly grasp the intended use of variables and functions.\n\n2. **Enhanced Static Analysis**: Tools like mypy, Pyright, and Pyre can analyze your code for type-related errors before runtime. This can catch bugs early in the development process, leading to more robust code.\n\n3. **Better IDE Support**: Many modern Integrated Development Environments (IDEs) and code editors provide enhanced features like autocompletion, inline documentation, and error highlighting when type hints are used. This can improve developer productivity.\n\n4. **Documentation Generation**: Type hints can be used to automatically generate documentation, making it easier to maintain and share information about the codebase.\n\n5. **Facilitates Refactoring**: When modifying code, type hints can help ensure that changes do not introduce type-related bugs. They provide a clear contract for what types are expected, making it easier to refactor code safely.\n\n6. **Type Safety**: While Python is dynamically typed, type hints introduce a level of type safety that can help prevent certain types of runtime errors. This is particularly useful in large codebases where tracking types can become complex.\n\n7. **Support for Complex Types**: Type hints support complex data structures, such as lists, dictionaries, and user-defined classes, allowing for precise type definitions. This can help clarify the expected structure of data being passed around in the code.\n\n8. **Encourages Best Practices**: Using type hints can encourage developers to think more carefully about the types of data they are working with, leading to better design and implementation practices.\n\n9. **Interoperability with Other Languages**: If you're working in a multi-language environment, type hints can make it easier to integrate Python code with other statically typed languages, as they provide a clearer contract for how data should be structured.\n\n10. **Gradual Typing**: Python allows for gradual typing, meaning you can start using type hints in parts of your codebase without needing to annotate everything at once. This makes it easier to adopt type hints incrementally.\n\nOverall, while Python's dynamic typing offers flexibility, type hints provide a way to enhance code quality, maintainability, and collaboration among developers.",
+          "Python's type hints, introduced in PEP 484, provide a way to indicate the expected data types of variables, function parameters, and return values. Here are several benefits of using type hints in Python:\n\n1. **Improved Readability**: Type hints make the code more understandable by providing explicit information about what types of values are expected. This can help other developers (or your future self) quickly grasp the intended use of variables and functions.\n\n2. **Enhanced Static Analysis**: Tools like mypy, Pyright, and Pyre can analyze your code for type-related errors before runtime. This can catch bugs early in the development process, leading to more robust code.\n\n3. **Better IDE Support**: Many modern Integrated Development Environments (IDEs) and code editors provide enhanced features like autocompletion, inline documentation, and error highlighting when type hints are used. This can improve developer productivity.\n\n4. **Documentation Generation**: Type hints can be used to automatically generate documentation, making it easier to maintain and share information about the codebase.\n\n5. **Facilitates Refactoring**: When modifying code, type hints can help ensure that changes are consistent with the expected types, making refactoring safer and easier.\n\n6. **Type Safety**: While Python is dynamically typed, type hints introduce a level of type safety that can help prevent certain types of runtime errors. This is particularly useful in large codebases where tracking types can become complex.\n\n7. **Support for Complex Types**: Type hints can express complex data structures, such as lists of dictionaries or nested types, using the `typing` module. This allows for more precise type definitions.\n\n8. **Encourages Best Practices**: Using type hints can encourage developers to think more carefully about the types of data they are working with, leading to better design and implementation practices.\n\n9. **Interoperability with Other Languages**: If you're working in a multi-language environment, type hints can help bridge the gap between Python and statically typed languages, making it easier to integrate and understand the code.\n\n10. **Optional Feature**: Type hints are optional in Python, meaning you can adopt them gradually. You can start using them in new code or in parts of an existing codebase without needing to refactor everything at once.\n\nOverall, while Python's dynamic typing is one of its strengths, type hints provide a way to enhance code quality, maintainability, and developer experience without sacrificing the flexibility that Python offers.",
+          "Python's type hints, introduced in PEP 484, provide a way to indicate the expected data types of variables, function parameters, and return values. Here are several benefits of using type hints in Python:\n\n1. **Improved Readability**: Type hints make the code more understandable by providing explicit information about what types of values are expected. This can help other developers (or your future self) quickly grasp the intended use of variables and functions.\n\n2. **Enhanced Static Analysis**: Tools like mypy, Pyright, and Pyre can analyze your code for type-related errors before runtime. This can catch bugs early in the development process, leading to more robust code.\n\n3. **Better IDE Support**: Many modern Integrated Development Environments (IDEs) and code editors provide enhanced features like autocompletion, inline documentation, and error highlighting when type hints are used. This can improve developer productivity.\n\n4. **Documentation Generation**: Type hints can be used to automatically generate documentation, making it easier to maintain and share information about the codebase. Tools like Sphinx can utilize type hints to create more informative documentation.\n\n5. **Facilitates Refactoring**: When modifying code, type hints can help ensure that changes are consistent with the expected types, making it easier to refactor and maintain the codebase without introducing type-related bugs.\n\n6. **Support for Complex Data Structures**: Type hints can express complex data structures, such as lists of dictionaries or nested types, using the `typing` module. This allows for more precise type definitions and better communication of intent.\n\n7. **Optional Typing**: Python's type hints are optional, meaning you can gradually introduce them into your codebase. This allows teams to adopt type hints at their own pace without requiring a complete rewrite of existing code.\n\n8. **Type Checking for Dynamic Languages**: Python is a dynamically typed language, which can lead to runtime errors that are hard to trace. Type hints provide a way to introduce some level of static typing, helping to mitigate these issues.\n\n9. **Encourages Better Design**: Using type hints can encourage developers to think more carefully about the interfaces of their functions and classes, leading to better design and more maintainable code.\n\n10. **Community and Ecosystem Support**: As type hints become more widely adopted, the Python community and ecosystem are increasingly supporting them, leading to a richer set of tools and libraries that leverage type information.\n\nOverall, while Python remains a dynamically typed language, type hints provide a powerful way to enhance code quality, maintainability, and developer experience."
+        ],
+        "negative": [
+          "Not using Python's type hints can lead to several drawbacks, especially in larger codebases or collaborative projects. Here are some of the key disadvantages:\n\n1. **Reduced Readability**: Type hints provide immediate context about what types of values are expected in functions and methods. Without them, understanding the intended use of variables and function parameters can require more time and effort.\n\n2. **Increased Risk of Bugs**: Without type hints, it can be easier to introduce type-related bugs. For example, passing an argument of the wrong type to a function may not raise an error until runtime, making it harder to catch issues early in the development process.\n\n3. **Lack of IDE Support**: Many modern Integrated Development Environments (IDEs) and code editors provide features like autocompletion, type checking, and inline documentation based on type hints. Not using them can limit the effectiveness of these tools, making development less efficient.\n\n4. **Difficulties in Refactoring**: When refactoring code, type hints can help ensure that changes do not introduce type-related errors. Without them, developers may need to rely more on tests to verify that the code still behaves as expected, which can be time-consuming.\n\n5. **Poor Documentation**: Type hints can serve as a form of documentation, making it easier for others (or even the original author) to understand how to use functions and classes. Without them, additional documentation may be necessary, which can lead to inconsistencies.\n\n6. **Challenges in Static Analysis**: Tools like mypy and other static type checkers can help catch type errors before runtime. Not using type hints means missing out on these tools, which can lead to more runtime errors and less robust code.\n\n7. **Incompatibility with Type-Driven Development**: Type-driven development practices, which emphasize the use of types to guide design and implementation, cannot be fully realized without type hints. This can limit the ability to adopt certain programming paradigms or methodologies.\n\n8. **Team Collaboration Issues**: In a team environment, not using type hints can lead to misunderstandings about how functions and classes are intended to be used. This can result in inconsistent usage patterns and increased onboarding time for new team members.\n\n9. **Difficulty in API Design**: When designing APIs or libraries, type hints can clarify the expected input and output types, making it easier for users to understand how to interact with the API. Without them, users may struggle to understand how to use the API correctly.\n\n10. **Performance Considerations**: While type hints themselves do not affect runtime performance, the lack of type information can lead to less optimized code. For example, certain optimizations in libraries or frameworks may rely on type information to improve performance.\n\nIn summary, while Python's dynamic typing offers flexibility, not using type hints can lead to a range of issues that can affect code quality, maintainability, and collaboration. Adopting type hints can help mitigate these drawbacks and improve the overall development experience.",
+          "Not using Python's type hints can lead to several drawbacks, particularly in larger codebases or collaborative projects. Here are some of the key disadvantages:\n\n1. **Reduced Readability**: Type hints provide immediate context about what types of values are expected in functions and methods. Without them, understanding the intended use of variables and function parameters can require more time and effort.\n\n2. **Increased Risk of Bugs**: Without type hints, it\u2019s easier to introduce type-related bugs. For example, passing a string to a function that expects an integer may not raise an error until runtime, making it harder to catch issues early in the development process.\n\n3. **Lack of IDE Support**: Many Integrated Development Environments (IDEs) and code editors provide better autocompletion, error checking, and refactoring tools when type hints are used. Not using them can limit the effectiveness of these tools, leading to a less efficient development experience.\n\n4. **Difficulties in Refactoring**: When modifying code, type hints can help ensure that changes are safe and consistent. Without them, developers may inadvertently introduce errors when changing function signatures or variable types.\n\n5. **Poor Documentation**: Type hints serve as a form of documentation that can be understood by both humans and machines. Without them, the documentation may be less clear, leading to misunderstandings about how to use functions and classes.\n\n6. **Challenges in Collaboration**: In team environments, type hints can help ensure that all team members have a clear understanding of the expected types, reducing miscommunication and errors when integrating different parts of the code.\n\n7. **Limited Static Analysis**: Tools like mypy and other static type checkers can only analyze code effectively when type hints are present. Without them, you miss out on the benefits of static type checking, which can catch errors before runtime.\n\n8. **Difficulty in API Design**: When designing APIs or libraries, type hints can help consumers of the API understand how to use it correctly. Without type hints, users may struggle to understand the expected input and output types.\n\n9. **Incompatibility with Type-Driven Development**: Approaches like Type-Driven Development (TDD) rely on type information to guide the design of software. Not using type hints can hinder the adoption of such methodologies.\n\n10. **Increased Cognitive Load**: Developers may need to spend more mental effort to keep track of types and their relationships without the guidance provided by type hints, which can slow down development and increase the likelihood of errors.\n\nIn summary, while Python is a dynamically typed language and can be used effectively without type hints, incorporating them can significantly enhance code quality, maintainability, and collaboration, especially in larger or more complex projects.",
+          "Not using Python's type hints can lead to several drawbacks, especially in larger codebases or collaborative projects. Here are some of the key disadvantages:\n\n1. **Reduced Readability**: Type hints provide immediate context about what types of values are expected in functions and methods. Without them, understanding the intended use of variables and function parameters can require more time and effort.\n\n2. **Increased Risk of Errors**: Without type hints, it\u2019s easier to introduce bugs due to type mismatches. For example, passing a string to a function that expects an integer may not raise an error until runtime, making it harder to catch issues early.\n\n3. **Lack of IDE Support**: Many modern Integrated Development Environments (IDEs) and code editors provide features like autocompletion, type checking, and inline documentation based on type hints. Not using them can limit the effectiveness of these tools, making development less efficient.\n\n4. **Difficulties in Refactoring**: When modifying code, type hints can help ensure that changes are safe and consistent. Without them, it can be harder to track how changes affect different parts of the code, increasing the risk of introducing bugs during refactoring.\n\n5. **Poor Documentation**: Type hints serve as a form of documentation that can be understood by both humans and machines. Without them, the documentation may be less clear, leading to misunderstandings about how to use functions and classes.\n\n6. **Challenges in Collaboration**: In team environments, type hints can help ensure that all team members have a clear understanding of the expected data types, reducing miscommunication and errors when integrating different parts of the code.\n\n7. **Limited Static Analysis**: Tools like mypy and Pyright can perform static type checking to catch type-related errors before runtime. Not using type hints means missing out on these tools, which can help improve code quality.\n\n8. **Difficulty in API Design**: When designing libraries or APIs, type hints can clarify the expected input and output types, making it easier for users to understand how to interact with the code. Without them, users may struggle to understand how to use the API correctly.\n\n9. **Incompatibility with Type-Dependent Features**: Some advanced features in Python, such as dataclasses and certain decorators, leverage type hints for their functionality. Not using type hints may limit the use of these features.\n\n10. **Longer Onboarding Time**: New developers joining a project without type hints may take longer to understand the codebase, as they have to infer types from the code rather than having explicit type information.\n\nIn summary, while Python is a dynamically typed language and can be used effectively without type hints, incorporating them can significantly enhance code quality, maintainability, and collaboration, especially in larger or more complex projects."
+        ]
+      },
+      "variant_scores": {
+        "positive": {
+          "regex": 1.0,
+          "semantic": 0.6036542671857964
+        },
+        "negative": {
+          "regex": 1.0,
+          "semantic": 0.5787579364639225
+        }
+      },
+      "flip_rates": {
+        "negative": 1.0
+      }
+    },
+    {
+      "id": "real-pert-persona-01",
+      "type": "perturbation",
+      "category": "framing",
+      "consistency": 0.16666666666666666,
+      "flip_rate": 1.0,
+      "variant_responses": {
+        "expert": [
+          "A hash table is a data structure that implements an associative array, allowing for efficient data retrieval. It uses a hash function to map keys to specific indices in an array, where the corresponding values are stored.\n\n### Key Components:\n\n1. **Hash Function**: A function \\( h(k) \\) that takes a key \\( k \\) and computes an index in the array. A good hash function minimizes collisions and distributes keys uniformly across the array.\n\n2. **Array (Bucket)**: The underlying storage structure, typically an array, where the values are stored. Each index in the array is referred to as a bucket.\n\n3. **Collision Resolution**: Since multiple keys can hash to the same index, a collision resolution strategy is necessary. Common methods include:\n   - **Chaining**: Each bucket contains a linked list (or another structure) of all entries that hash to the same index.\n   - **Open Addressing**: When a collision occurs, the algorithm searches for the next available bucket using a probing sequence (e.g., linear probing, quadratic probing, or double hashing).\n\n### Operations:\n\n- **Insertion**: Compute the hash index using the hash function, then store the key-value pair in the corresponding bucket. If a collision occurs, apply the chosen resolution strategy.\n\n- **Search**: Compute the hash index for the key. If the bucket is occupied, check the entries (in case of chaining) or probe (in case of open addressing) until the key is found or an empty slot is reached.\n\n- **Deletion**: Similar to search; locate the key and remove it. In chaining, this involves unlinking the node. In open addressing, mark the slot as deleted but ensure the probing sequence remains intact.\n\n### Performance:\n\n- **Average Case**: \\( O(1) \\) for insertion, search, and deletion, assuming a good hash function and low load factor.\n- **Worst Case**: \\( O(n) \\) if all keys hash to the same index (e.g., poor hash function or high load factor).\n\n### Load Factor:\n\nThe load factor \\( \\alpha \\) is defined as \\( \\alpha = \\frac{n}{m} \\), where \\( n \\) is the number of entries and \\( m \\) is the number of buckets. A load factor greater than 1 indicates that the table is too full, leading to increased collisions and degraded performance. Dynamic resizing (rehashing) is often employed to maintain efficiency.\n\nIn summary, a hash table provides a fast and efficient way to store and retrieve key-value pairs, leveraging the properties of hash functions and collision resolution techniques.",
+          "A hash table is a data structure that implements an associative array, allowing for efficient data retrieval. It uses a hash function to map keys to specific indices in an array, where the corresponding values are stored.\n\n### Key Components:\n\n1. **Hash Function**: A function \\( h(k) \\) that takes a key \\( k \\) and computes an index \\( i \\) in the array. The goal is to distribute keys uniformly across the array to minimize collisions.\n\n2. **Array**: A fixed-size array where the values are stored. The size of the array is typically a prime number to reduce clustering.\n\n3. **Collision Resolution**: When two keys hash to the same index, a collision occurs. Common strategies to handle collisions include:\n   - **Chaining**: Each array index points to a linked list (or another data structure) of entries that hash to the same index.\n   - **Open Addressing**: When a collision occurs, the algorithm searches for the next available slot in the array using a probing sequence (e.g., linear probing, quadratic probing, or double hashing).\n\n### Operations:\n\n- **Insertion**: Compute the index using the hash function, handle collisions if necessary, and store the key-value pair.\n  \n- **Search**: Compute the index for the key using the hash function. If a collision resolution method is used, traverse the linked list or follow the probing sequence to find the key.\n\n- **Deletion**: Similar to search, locate the key and remove it, adjusting the structure as needed to maintain integrity (especially in open addressing).\n\n### Performance:\n\n- **Average Case**: \\( O(1) \\) for insertion, search, and deletion, assuming a good hash function and low load factor.\n- **Worst Case**: \\( O(n) \\) if many collisions occur, particularly in poorly designed hash functions or high load factors.\n\n### Load Factor:\n\nThe load factor \\( \\alpha \\) is defined as \\( \\alpha = \\frac{n}{m} \\), where \\( n \\) is the number of entries and \\( m \\) is the size of the array. A load factor greater than 0.7 often necessitates resizing the hash table to maintain performance.\n\nIn summary, a hash table provides efficient key-value storage and retrieval through a combination of a hash function and collision resolution strategies, with performance heavily influenced by the choice of hash function and load factor management.",
+          "A hash table is a data structure that implements an associative array, allowing for efficient data retrieval. It uses a hash function to map keys to specific indices in an array, where the corresponding values are stored.\n\n### Key Components:\n\n1. **Hash Function**: A function \\( h(k) \\) that takes a key \\( k \\) and computes an index in the array. A good hash function minimizes collisions and distributes keys uniformly across the array.\n\n2. **Array (Bucket)**: The underlying storage structure, typically an array of fixed size. Each index in the array is referred to as a bucket.\n\n3. **Collision Resolution**: When two keys hash to the same index, a collision occurs. Common strategies to handle collisions include:\n   - **Chaining**: Each bucket contains a linked list (or another data structure) of all entries that hash to the same index.\n   - **Open Addressing**: If a collision occurs, the algorithm searches for the next available bucket using a probing sequence (e.g., linear probing, quadratic probing, or double hashing).\n\n### Operations:\n\n- **Insertion**: Compute the hash index using the hash function, then store the key-value pair in the corresponding bucket. If a collision occurs, apply the chosen collision resolution strategy.\n\n- **Search**: Compute the hash index for the key. If the bucket is empty, the key is not present. If it contains entries, traverse the list (in chaining) or follow the probing sequence (in open addressing) to find the key.\n\n- **Deletion**: Similar to search; locate the key and remove it from the bucket, adjusting pointers in chaining or marking the slot as deleted in open addressing.\n\n### Performance:\n\n- **Average Case**: \\( O(1) \\) for insertion, search, and deletion, assuming a good hash function and low load factor.\n- **Worst Case**: \\( O(n) \\) if all keys hash to the same index (e.g., poor hash function or high load factor).\n\n### Load Factor:\n\nThe load factor \\( \\alpha \\) is defined as \\( \\alpha = \\frac{n}{m} \\), where \\( n \\) is the number of entries and \\( m \\) is the number of buckets. A load factor greater than 1 indicates that the table is too full, leading to increased collisions and degraded performance. Dynamic resizing (rehashing) is often employed to maintain efficiency.\n\nIn summary, a hash table provides a fast and efficient way to store and retrieve key-value pairs, leveraging the properties of hash functions and collision resolution techniques."
+        ],
+        "beginner": [
+          "Sure! Imagine you have a big box of toys, and you want to keep them organized so you can find them easily. Instead of just throwing them all in the box, you decide to use a special system.\n\nFirst, you take a piece of paper and write down the names of your toys. Then, you decide to use numbers to help you remember where each toy is. For example, you might say:\n\n- Toy 1: Teddy Bear\n- Toy 2: Action Figure\n- Toy 3: Puzzle\n\nNow, instead of looking through the whole box every time you want to find a toy, you can just look at your list and see which number goes with the toy you want. \n\nIn a hash table, it works kind of like that! The toys are like pieces of information (or data), and the numbers are like special addresses where that information is stored. \n\nWhen you want to find something, you use a special rule (like a magic formula) to turn the name of the toy into a number. This number tells you exactly where to look in the box. If you want to find the Teddy Bear, you might use the rule to find out it\u2019s in spot number 1. \n\nSometimes, two toys might end up with the same number (like if you have two toys named \"Car\"). When that happens, you just keep a little extra note with both toys in that spot, so you can find them both easily.\n\nSo, a hash table is like a super organized toy box that helps you find your toys really fast by using numbers!",
+          "Sure! Imagine you have a big box of toys, and you want to keep them organized so you can find them easily. Instead of just throwing them all in the box, you decide to use a special system.\n\nFirst, you take a piece of paper and write down the names of your toys. Then, you decide to use numbers to help you remember where each toy goes. For example, you might say:\n\n- Toy car goes in box 1\n- Teddy bear goes in box 2\n- Puzzle goes in box 3\n\nNow, when you want to find your toy car, you just look at your list, see that it belongs in box 1, and go straight to that box. This makes it super quick to find your toys!\n\nA hash table works in a similar way. It\u2019s like a big box where we store information, but instead of toys, we store data. Here\u2019s how it works:\n\n1. **Names and Numbers**: Just like you wrote down the names of your toys, in a hash table, we have keys (like the names) that help us find our data. Each key is turned into a number using a special formula (like your list of toy locations).\n\n2. **Boxes**: The number tells us which \"box\" (or spot) to put the data in. If two keys end up with the same number (like if two toys wanted to go in box 1), we have a way to handle that, just like you might stack toys in the same box.\n\n3. **Finding Things**: When you want to find something, you look at the key, use the formula to get the number, and go straight to the right box. This makes finding things really fast!\n\nSo, a hash table is like a super organized toy box that helps us find and store information quickly and easily!",
+          "Sure! Imagine you have a big box of toys, and you want to keep them organized so you can find them easily. Instead of just throwing them all in the box, you decide to use a special system.\n\nFirst, you take a piece of paper and write down the names of your toys. Then, you decide to put each toy in a specific spot in the box based on its name. For example, if you have a toy car, you might decide that all toy cars go in the first section of the box, and all stuffed animals go in the second section.\n\nNow, here\u2019s where it gets fun! To figure out where to put each toy, you use a simple rule. Let\u2019s say you take the first letter of the toy's name and use it to decide which section to put it in. If it starts with \"C,\" it goes in the \"C\" section. If it starts with \"S,\" it goes in the \"S\" section, and so on.\n\nThis way, when you want to find a toy, you just look at the first letter of its name, go to the right section, and there it is! This makes it super quick to find your toys.\n\nIn a hash table, it works kind of like that! Instead of toys, we have pieces of information, and instead of a box, we have a computer. The computer uses a special rule (called a \"hash function\") to decide where to store each piece of information, just like you used the first letter of the toy names. When we want to find something, we use that same rule to quickly locate it.\n\nSo, a hash table helps keep things organized and makes it really fast to find what we\u2019re looking for, just like your toy box!"
+        ]
+      },
+      "variant_scores": {
+        "expert": {
+          "regex": 1.0,
+          "semantic": 0.6833691616048565
+        },
+        "beginner": {
+          "regex": 1.0,
+          "semantic": 0.4938152856899794
+        }
+      },
+      "flip_rates": {
+        "beginner": 1.0
+      }
+    },
+    {
+      "id": "real-inv-formatting-01",
+      "type": "invariance",
+      "category": "noise",
+      "consistency": 0.6666666666666666,
+      "flip_rate": 1.0,
+      "variant_responses": {
+        "clean": [
+          "The email address extracted from the text is: john.smith@example.com.",
+          "The email address extracted from the text is: john.smith@example.com.",
+          "The email address extracted from the text is: john.smith@example.com."
+        ],
+        "messy-whitespace": [
+          "The email address extracted from the text is: john.smith@example.com",
+          "The email address extracted from the text is: john.smith@example.com",
+          "The email address extracted from the text is: john.smith@example.com"
+        ],
+        "mixed-formatting": [
+          "The email address extracted from the text is: john.smith@example.com",
+          "The email address extracted from the text is: john.smith@example.com",
+          "The email address extracted from the text is: john.smith@example.com"
+        ]
+      },
+      "variant_scores": {
+        "clean": {
+          "regex": 1.0
+        },
+        "messy-whitespace": {
+          "regex": 1.0
+        },
+        "mixed-formatting": {
+          "regex": 1.0
+        }
+      },
+      "flip_rates": {
+        "messy-whitespace": 1.0,
+        "mixed-formatting": 1.0
+      }
+    },
+    {
+      "id": "real-pert-anchoring-01",
+      "type": "perturbation",
+      "category": "distractor",
+      "consistency": 0.6666666666666666,
+      "flip_rate": 0.5,
+      "variant_responses": {
+        "no-anchor": [
+          "$110,000",
+          "$110,000",
+          "$110,000"
+        ],
+        "low-anchor": [
+          "100000",
+          "100000",
+          "100000"
+        ],
+        "high-anchor": [
+          "$110,000",
+          "$110,000",
+          "$110,000"
+        ]
+      },
+      "variant_scores": {
+        "no-anchor": {
+          "regex": 1.0
+        },
+        "low-anchor": {
+          "regex": 1.0
+        },
+        "high-anchor": {
+          "regex": 1.0
+        }
+      },
+      "flip_rates": {
+        "low-anchor": 1.0,
+        "high-anchor": 0.0
+      }
+    }
+  ]
+}

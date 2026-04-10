@@ -1,0 +1,299 @@
+[
+  {
+    "id": "syn-inv-paraphrase-01",
+    "type": "invariance",
+    "category": "paraphrase",
+    "description": "Synthetic: Rephrase 'capital of France' 3 ways. Rule: reword the question preserving semantic meaning, vary sentence structure.",
+    "variants": [
+      {
+        "variant_id": "base",
+        "prompt": "What is the capital of France?",
+        "is_baseline": true
+      },
+      {
+        "variant_id": "paraphrase-1",
+        "prompt": "Tell me France's capital city.",
+        "is_baseline": false
+      },
+      {
+        "variant_id": "paraphrase-2",
+        "prompt": "Which city serves as the capital of France?",
+        "is_baseline": false
+      }
+    ],
+    "expected": {
+      "exact": "Paris",
+      "regex": "(?i)\\bparis\\b",
+      "semantic_anchor": "Paris is the capital of France"
+    },
+    "expected_behavior": "all_same",
+    "scoring": ["exact", "regex"]
+  },
+  {
+    "id": "syn-inv-typo-01",
+    "type": "invariance",
+    "category": "typo",
+    "description": "Synthetic: Introduce 1-2 character-level typos into key words. Rule: swap/drop/duplicate one character per key word.",
+    "variants": [
+      {
+        "variant_id": "base",
+        "prompt": "What is the largest planet in our solar system?",
+        "is_baseline": true
+      },
+      {
+        "variant_id": "typo-1",
+        "prompt": "Wat is the largets planet in our solar system?",
+        "is_baseline": false
+      },
+      {
+        "variant_id": "typo-2",
+        "prompt": "What is teh largest plannet in our solar system?",
+        "is_baseline": false
+      }
+    ],
+    "expected": {
+      "exact": "Jupiter",
+      "regex": "(?i)\\bjupiter\\b",
+      "semantic_anchor": "Jupiter is the largest planet in our solar system"
+    },
+    "expected_behavior": "all_same",
+    "scoring": ["exact", "regex"]
+  },
+  {
+    "id": "syn-inv-noise-01",
+    "type": "invariance",
+    "category": "noise",
+    "description": "Synthetic: Prepend/append irrelevant tokens. Rule: add non-semantic noise (dashes, filler words, random strings) around the core question.",
+    "variants": [
+      {
+        "variant_id": "base",
+        "prompt": "Convert 100 degrees Celsius to Fahrenheit.",
+        "is_baseline": true
+      },
+      {
+        "variant_id": "noise-1",
+        "prompt": "--- Convert 100 degrees Celsius to Fahrenheit. ---",
+        "is_baseline": false
+      },
+      {
+        "variant_id": "noise-2",
+        "prompt": "btw, Convert 100 degrees Celsius to Fahrenheit. random123",
+        "is_baseline": false
+      }
+    ],
+    "expected": {
+      "exact": "212",
+      "regex": "\\b212\\b",
+      "semantic_anchor": "100 degrees Celsius is 212 degrees Fahrenheit"
+    },
+    "expected_behavior": "all_same",
+    "scoring": ["regex"]
+  },
+  {
+    "id": "syn-pert-reorder-01",
+    "type": "perturbation",
+    "category": "reorder",
+    "description": "Synthetic: Shuffle multiple-choice option order. Rule: reorder answer choices while keeping the correct answer the same. Tests if model anchors on position.",
+    "variants": [
+      {
+        "variant_id": "base",
+        "prompt": "Which planet is the largest in our solar system? Answer with ONLY the letter.\nA) Mars\nB) Earth\nC) Jupiter\nD) Saturn",
+        "is_baseline": true
+      },
+      {
+        "variant_id": "reorder-1",
+        "prompt": "Which planet is the largest in our solar system? Answer with ONLY the letter.\nA) Jupiter\nB) Saturn\nC) Mars\nD) Earth",
+        "is_baseline": false
+      },
+      {
+        "variant_id": "reorder-2",
+        "prompt": "Which planet is the largest in our solar system? Answer with ONLY the letter.\nA) Saturn\nB) Mars\nC) Earth\nD) Jupiter",
+        "is_baseline": false
+      }
+    ],
+    "expected": {
+      "exact": null,
+      "regex": "(?i)(\\bjupiter\\b|\\b[ABCD]\\b)",
+      "semantic_anchor": "Jupiter is the largest planet"
+    },
+    "expected_behavior": "may_differ",
+    "scoring": ["regex"],
+    "notes": "The letter answer should change (C->A->D) as options are reordered. Regex accepts either Jupiter mention or a letter answer."
+  },
+  {
+    "id": "syn-pert-distractor-01",
+    "type": "perturbation",
+    "category": "distractor",
+    "description": "Synthetic: Add a plausible but irrelevant sentence before the question. Rule: prefix with a factual statement containing a date/number that could leak into the answer.",
+    "variants": [
+      {
+        "variant_id": "base",
+        "prompt": "What year did World War II end?",
+        "is_baseline": true
+      },
+      {
+        "variant_id": "distractor-1",
+        "prompt": "The Treaty of Westphalia was signed in 1648. What year did World War II end?",
+        "is_baseline": false
+      },
+      {
+        "variant_id": "distractor-2",
+        "prompt": "The French Revolution began in 1789. What year did World War II end?",
+        "is_baseline": false
+      }
+    ],
+    "expected": {
+      "exact": "1945",
+      "regex": "\\b1945\\b",
+      "semantic_anchor": "World War II ended in 1945"
+    },
+    "expected_behavior": "may_differ",
+    "scoring": ["regex"],
+    "notes": "Tests whether distractor dates (1648, 1789) leak into the answer. Correct answer is always 1945."
+  },
+  {
+    "id": "real-inv-codeswitch-01",
+    "type": "invariance",
+    "category": "paraphrase",
+    "description": "Real-world (redacted): Same technical question in formal vs casual register. Simulates support tickets from different user personas.",
+    "variants": [
+      {
+        "variant_id": "formal",
+        "prompt": "Please explain the three-way handshake process in TCP/IP networking.",
+        "is_baseline": true
+      },
+      {
+        "variant_id": "casual",
+        "prompt": "yo how does the TCP handshake thing work lol",
+        "is_baseline": false
+      },
+      {
+        "variant_id": "terse",
+        "prompt": "tcp 3-way handshake steps?",
+        "is_baseline": false
+      }
+    ],
+    "expected": {
+      "exact": null,
+      "regex": "(?i)(SYN|ACK|three.way|3.way)",
+      "semantic_anchor": "TCP uses a three-way handshake: SYN, SYN-ACK, ACK to establish a connection"
+    },
+    "expected_behavior": "all_same",
+    "scoring": ["regex", "semantic"]
+  },
+  {
+    "id": "real-pert-framing-01",
+    "type": "perturbation",
+    "category": "framing",
+    "description": "Real-world (redacted): Same factual question framed positively vs negatively. From a product FAQ scenario where users ask the same thing with opposite framing.",
+    "variants": [
+      {
+        "variant_id": "positive",
+        "prompt": "What are the benefits of using Python's type hints?",
+        "is_baseline": true
+      },
+      {
+        "variant_id": "negative",
+        "prompt": "What are the drawbacks of NOT using Python's type hints?",
+        "is_baseline": false
+      }
+    ],
+    "expected": {
+      "exact": null,
+      "regex": "(?i)(readability|maintainability|error|bug|IDE|tooling|type.check)",
+      "semantic_anchor": "Type hints improve code readability, catch errors early, and enable better IDE support"
+    },
+    "expected_behavior": "may_differ",
+    "scoring": ["regex", "semantic"],
+    "notes": "Core points should overlap but framing may shift emphasis. Semantic similarity is the key metric here."
+  },
+  {
+    "id": "real-pert-persona-01",
+    "type": "perturbation",
+    "category": "framing",
+    "description": "Real-world (redacted): Same question with different system prompts targeting expert vs beginner. From an adaptive learning platform scenario.",
+    "variants": [
+      {
+        "variant_id": "expert",
+        "prompt": "Explain how a hash table works.",
+        "system_prompt": "You are a computer science professor speaking to a PhD student. Be technical and concise.",
+        "is_baseline": true
+      },
+      {
+        "variant_id": "beginner",
+        "prompt": "Explain how a hash table works.",
+        "system_prompt": "You are a friendly tutor explaining to a 10-year-old. Use simple analogies and no jargon.",
+        "is_baseline": false
+      }
+    ],
+    "expected": {
+      "exact": null,
+      "regex": "(?i)(hash|key|value|bucket|collision|lookup|store)",
+      "semantic_anchor": "A hash table stores key-value pairs using a hash function to map keys to bucket indices for fast lookup"
+    },
+    "expected_behavior": "may_differ",
+    "scoring": ["regex", "semantic"],
+    "notes": "Core concepts should appear in both, but vocabulary and depth should differ. Perturbation test: we measure HOW MUCH the response changes."
+  },
+  {
+    "id": "real-inv-formatting-01",
+    "type": "invariance",
+    "category": "noise",
+    "description": "Real-world (redacted): Same data extraction task with different whitespace and formatting. From a document parsing pipeline where input formatting varies.",
+    "variants": [
+      {
+        "variant_id": "clean",
+        "prompt": "Extract the email address from this text: Contact John Smith at john.smith@example.com for details.",
+        "is_baseline": true
+      },
+      {
+        "variant_id": "messy-whitespace",
+        "prompt": "Extract the email address from this text:   Contact   John   Smith   at   john.smith@example.com   for   details.",
+        "is_baseline": false
+      },
+      {
+        "variant_id": "mixed-formatting",
+        "prompt": "Extract the email address from this text:\n\nContact John Smith at\njohn.smith@example.com\nfor details.",
+        "is_baseline": false
+      }
+    ],
+    "expected": {
+      "exact": "john.smith@example.com",
+      "regex": "john\\.smith@example\\.com",
+      "semantic_anchor": "john.smith@example.com"
+    },
+    "expected_behavior": "all_same",
+    "scoring": ["regex"]
+  },
+  {
+    "id": "real-pert-anchoring-01",
+    "type": "perturbation",
+    "category": "distractor",
+    "description": "Real-world (redacted): Numerical estimation preceded by an unrelated large/small number (anchoring bias). From a pricing recommendation system where context numbers might bias the output.",
+    "variants": [
+      {
+        "variant_id": "no-anchor",
+        "prompt": "Estimate the average annual salary of a software engineer in the United States in USD. Reply with just the number.",
+        "is_baseline": true
+      },
+      {
+        "variant_id": "low-anchor",
+        "prompt": "A cup of coffee costs about $3. Estimate the average annual salary of a software engineer in the United States in USD. Reply with just the number.",
+        "is_baseline": false
+      },
+      {
+        "variant_id": "high-anchor",
+        "prompt": "The US national debt is over $33 trillion. Estimate the average annual salary of a software engineer in the United States in USD. Reply with just the number.",
+        "is_baseline": false
+      }
+    ],
+    "expected": {
+      "exact": null,
+      "regex": "\\b\\d{2,3}[,.]?\\d{3}\\b",
+      "semantic_anchor": "The average software engineer salary in the US is approximately $100,000-$120,000"
+    },
+    "expected_behavior": "may_differ",
+    "scoring": ["regex"],
+    "notes": "Tests anchoring bias. All answers should be in a reasonable range (80k-200k). The regex checks for a number in the thousands. Compare numeric values across variants to detect anchor-driven drift."
+  }
+]
