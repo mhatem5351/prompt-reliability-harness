@@ -24,7 +24,7 @@ The same question asked with a typo, different phrasing, or extra context someti
 | Exact match | Binary correctness for short answers |
 | Regex match | Flexible correctness — tolerates surrounding text |
 | Semantic similarity | Content overlap via OpenAI embeddings |
-| Consistency | How often all variants produce the same text |
+| Consistency | Share of all responses (every variant and run) that match the most common answer, after lowercasing |
 | Flip rate | How often a perturbation changes the answer vs baseline |
 
 ## Setup
@@ -32,7 +32,8 @@ The same question asked with a typo, different phrasing, or extra context someti
 ```bash
 pip install -r requirements.txt
 cp .env.example .env
-# Add your OpenAI API key to .env
+# Set OPENAI_API_KEY in .env (or export it in your shell).
+# The older variable name OpenAI_KEY_TOKEN is still accepted.
 ```
 
 ## Usage
@@ -57,11 +58,16 @@ python run_eval.py --runs 3 --scorers regex,semantic
 test_cases.json   — 10 test cases with variants and expected answers
 run_eval.py       — Main runner: calls OpenAI, scores, reports
 scoring.py        — Scoring functions (exact, regex, semantic)
+results.json      — Output of the run shown below (gpt-4o-mini, 3 runs per variant)
 requirements.txt  — openai + python-dotenv
+.env.example      — Template for the API key
+DESIGN.md         — Design decisions, test-case design, scoring approach
 SHIP_NOTES.md     — What to ship first vs later
 ```
 
 ## Sample Output
+
+Excerpt from the committed run in `results.json` (gpt-4o-mini, 3 runs per variant, temperature 0):
 
 ```
 Case ID                             Type          Consistency  Regex  Flip Rate
@@ -71,6 +77,21 @@ real-pert-anchoring-01              perturbation  0.67         1.00  0.50      f
 OVERALL                                           0.49         1.00
 ```
 
+Across all 10 cases in that run:
+
+- Regex correctness was 1.00 on every case: every response matched the expected answer pattern.
+- Mean consistency was 0.49 (from 0.11 on `real-inv-codeswitch-01` to 1.00 on `syn-inv-typo-01`), mostly because the same answer was worded differently.
+- Flip rate was 1.00 on 4 of the 5 perturbation cases and 0.50 on `real-pert-anchoring-01`.
+
+## Limitations
+
+- Consistency and flip rate compare whole responses as exact strings after lowercasing, so harmless rewording of a correct answer counts as inconsistent. They are most useful for short or structured answers.
+- 3 runs per variant and 10 hand-written cases are enough to spot drift, not to make statistically significant claims.
+
+## Design Notes
+
+See [DESIGN.md](DESIGN.md) for the design decisions (model choice, JSON test cases, metrics, invariance vs perturbation tests, temperature 0) and how the test cases were built. The original document is [Prompt_Reliability_Design_Doc.docx](Prompt_Reliability_Design_Doc.docx).
+
 ## Ship First vs Later
 
 See [SHIP_NOTES.md](SHIP_NOTES.md) for the full breakdown.
@@ -78,3 +99,7 @@ See [SHIP_NOTES.md](SHIP_NOTES.md) for the full breakdown.
 **Now:** 10 test cases + runner + regex/exact scoring + CI-ready consistency metrics.
 
 **Later:** Auto-generated variants, statistical significance, result trending, async execution, multi-model comparison.
+
+## License
+
+MIT, see [LICENSE](LICENSE).
