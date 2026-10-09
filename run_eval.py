@@ -212,9 +212,14 @@ def main():
 
     # Load environment
     load_dotenv()
-    api_key = os.getenv("OpenAI_KEY_TOKEN")
+    # Standard OPENAI_API_KEY first; the older OpenAI_KEY_TOKEN name is still accepted.
+    api_key = os.getenv("OPENAI_API_KEY") or os.getenv("OpenAI_KEY_TOKEN")
     if not api_key:
-        print("Error: OpenAI_KEY_TOKEN not found in .env file", file=sys.stderr)
+        print(
+            "Error: OpenAI API key not found. Set OPENAI_API_KEY (or the older "
+            "OpenAI_KEY_TOKEN) in the environment or in a .env file.",
+            file=sys.stderr,
+        )
         sys.exit(1)
 
     client = OpenAI(api_key=api_key)
